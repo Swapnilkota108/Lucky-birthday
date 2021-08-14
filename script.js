@@ -3,7 +3,7 @@ const button = document.querySelector('.btn');
 const dateInput = document.querySelector('.date');
 const luckyNumberInput = document.querySelector('.luckyNum');
 const output = document.querySelector('.output');
-const cake = document.querySelector('.cake');
+const cake = document.querySelector('.cake1');
 
 function calculateSum(dob){
    dob = dob.replaceAll('-','');
@@ -18,10 +18,11 @@ function compareValues(sum,value){
     
   if(sum%value===0){
      output.innerText='Congrats,your birth date is a lucky number 🥳 🤩';
-     cake.style.display = 'block';
+    cake.style.display = 'block';
   }
   else{
     output.innerText= 'You create your own luck 🤗 😉';
+    cake.style.display = 'none';
   }
 }
 
@@ -38,7 +39,7 @@ button.addEventListener('click',function clickhandler(){
   const dob = dateInput.value;
   const sum = calculateSum(dob);
   const value=luckyNumberInput.value;
-  cake.style.display = 'none';
+  
   compareValues(sum,value);
 }
 )
