@@ -3,8 +3,9 @@ const button = document.querySelector('.btn');
 const dateInput = document.querySelector('.date');
 const luckyNumberInput = document.querySelector('.luckyNum');
 const output = document.querySelector('.output');
-const cake = document.querySelector('.cake1');
-
+const cake = document.querySelector('.cakeImg');
+ 
+cake.style.display = 'none'; 
 function calculateSum(dob){
    dob = dob.replaceAll('-','');
   let sum=0;
