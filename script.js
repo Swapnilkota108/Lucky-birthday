@@ -6,7 +6,7 @@ const output = document.querySelector('.output');
 const cake = document.querySelector('.cakeImg');
  
 cake.style.display = 'none'; 
-function calculateSum(dob){
+const calculateSum = dob => {
    dob = dob.replaceAll('-','');
   let sum=0;
   for(let i=0;i<dob.length;i++){
@@ -15,7 +15,7 @@ function calculateSum(dob){
   return sum;
 }
 
-function compareValues(sum,value){
+const compareValues = (sum,value) => {
     
   if(sum%value===0){
      output.innerText='Congrats,your birth date is a lucky number 🥳 🤩';
@@ -27,20 +27,12 @@ function compareValues(sum,value){
   }
 }
 
-
-
-
-
-
-
-
-
-
-button.addEventListener('click',function clickhandler(){
+const clickhandler = () => {
   const dob = dateInput.value;
   const sum = calculateSum(dob);
   const value=luckyNumberInput.value;
   
   compareValues(sum,value);
 }
-)
+
+button.addEventListener('click',clickhandler);
